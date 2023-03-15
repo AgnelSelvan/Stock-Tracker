@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "666553099517",
+    "project_id": "stock-tracker-25d7b",
+    "storage_bucket": "stock-tracker-25d7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666553099517:android:6267a4b6135cd292074a94",
+        "android_client_info": {
+          "package_name": "com.as.stockTracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666553099517-jf0pmksbhnbf0sdf8hgqecde31mpet4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrz1cgycGvpDxx52C4qKvI2esX-Vji5TA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666553099517-jf0pmksbhnbf0sdf8hgqecde31mpet4j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
