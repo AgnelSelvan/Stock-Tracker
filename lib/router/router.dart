@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stock_tracker/di.dart' as di;
 import 'package:stock_tracker/modules/auth/presentation/state/bloc/auth_bloc.dart';
-import 'package:stock_tracker/modules/auth/presentation/state/cubit/login_cubit.dart';
+import 'package:stock_tracker/modules/auth/presentation/state/cubit/login/login_cubit.dart';
+import 'package:stock_tracker/modules/auth/presentation/state/cubit/register/register_cubit.dart';
 import 'package:stock_tracker/modules/auth/presentation/views/login/login.dart';
 import 'package:stock_tracker/modules/auth/presentation/views/register/register.dart';
 import 'package:stock_tracker/modules/home/home.dart';
@@ -40,7 +41,10 @@ class AppRoutes {
         currentScreen = const HomeScreen();
         break;
       case AppRoutes.register:
-        currentScreen = RegisterScreen();
+        currentScreen = BlocProvider(
+          create: (context) => RegisterCubit(),
+          child: RegisterScreen(),
+        );
         break;
       default:
         currentScreen = const SplashScreen();

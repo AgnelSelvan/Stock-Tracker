@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stock_tracker/modules/auth/presentation/state/cubit/register/register_cubit.dart';
 import 'package:stock_tracker/router/router.dart';
 import 'package:stock_tracker/utility/assets/assets.dart';
 import 'package:stock_tracker/utility/colors/colors.dart';
@@ -218,19 +220,30 @@ class RegisterScreen extends StatelessWidget {
                             const SizedBox(
                               height: 10,
                             ),
-                            Row(
-                              children: [
-                                DropdownButton(
-                                  items: Constants.stateAndCityList.keys
-                                      .toList()
-                                      .map((e) => DropdownMenuItem(
-                                            value: e,
-                                            child: Text(e),
-                                          ))
-                                      .toList(),
-                                  onChanged: (val) {},
-                                ),
-                              ],
+                            DropdownButton(
+                              items: Constants.stateAndCityList.keys
+                                  .toList()
+                                  .map((e) => DropdownMenuItem(
+                                        value: e,
+                                        child: Text(e),
+                                      ))
+                                  .toList(),
+                              onChanged: (val) {
+                                context.read<RegisterCubit>().updateState(
+                                      val,
+                                      Constants.stateAndCityList[val],
+                                    );
+                              },
+                            ),
+                            DropdownButton(
+                              items: Constants.stateAndCityList.keys
+                                  .toList()
+                                  .map((e) => DropdownMenuItem(
+                                        value: e,
+                                        child: Text(e),
+                                      ))
+                                  .toList(),
+                              onChanged: (val) {},
                             )
                           ],
                         ),
